@@ -40,7 +40,7 @@ while (match = search.exec(query)){
 }
 if (urlParams["p"] == null || urlParams["id"] == null || platforms[urlParams["p"]] == null)
 {
-    this.document.getElementsByClassName("note")[0].innerHTML = "One or multiple wrong queries was passed, please get a valid link from the owner.";
+    this.document.getElementById("note").innerHTML = "One or multiple wrong queries was passed, please get a valid link from the owner.";
     downloadbutton.disabled = true;
     downloadbutton.innerText = "No Download";
 }

@@ -79,27 +79,29 @@ h6{
 	font-size:1.3em;
 }
 
-.reason
+p.reason
 {
   text-align:justify;
-	margin:0.8em 0;
-	padding:0;
-	clear:both;
+  margin:0.8em 0;
+  padding:0;
+  clear:both;
   color:#C4C3C7;
   font-size: 1.2em;
   border-spacing: 0;
   white-space: 0;
   letter-spacing: 0;
   word-spacing: 0;
-  line-height : 10px;
-  font-family: 'Lato'
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-size: 18px; 
+  line-height: 32px;
 }
 
+
 p{
-	text-align:justify;
-	margin:0.8em 0;
-	padding:0;
-	clear:both;
+  text-align:justify;
+  margin:0.8em 0;
+  padding:0;
+  clear:both;
   color:#C4C3C7;
 }
 
@@ -165,8 +167,17 @@ div.content{
 	margin-left:auto;
 	margin-right:auto;
 	clear:both;
-	position:relative;
+	/*position:relative;*/
 }
+div.reason
+{
+	width:100%;
+	max-width:70em;
+	margin-left:auto;
+	margin-right:auto;
+	clear:both;
+}
+
 a.active::after {
   transform: translateX(0%);
 }
