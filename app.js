@@ -40,7 +40,7 @@ while (match = search.exec(query)){
 }
 if ((urlParams["p"] == null || urlParams["id"] == null || platforms[urlParams["p"]] == null) && urlParams["url"] == null)
 {
-    this.document.getElementById("note").innerHTML = "One or multiple wrong queries was passed, please get a valid link from the owner.";
+    this.document.getElementById("note").innerHTML = "One or multiple wrong queries was passed, please get a valid link from the owner. If you want to use this then check <a class=\"link\" href=\"#use\">usage</a>.";
     downloadbutton.disabled = true;
     downloadbutton.innerText = "No Link Found";
 }
