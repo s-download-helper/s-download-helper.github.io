@@ -38,11 +38,24 @@ urlParams = {};
 while (match = search.exec(query)){
     urlParams[decode(match[1])] = decode(match[2]);
 }
-if (urlParams["p"] == null || urlParams["id"] == null || platforms[urlParams["p"]] == null)
+if ((urlParams["p"] == null || urlParams["id"] == null || platforms[urlParams["p"]] == null) && urlParams["url"] == null)
 {
-    this.document.getElementsByClassName("note")[0].innerHTML = "One or multiple wrong queries was passed, please get a valid link from the owner.";
+    this.document.getElementById("note").innerHTML = "One or multiple wrong queries was passed, please get a valid link from the owner.";
     downloadbutton.disabled = true;
-    downloadbutton.innerText = "No Download";
+    downloadbutton.innerText = "No Link Found";
+}
+else if (urlParams["url"] != null)
+{
+    this.document.getElementById("note").innerHTML = "If you don't get redirected to your desired link then close that tab and click the Go button again.";
+    var url = urlParams["url"];
+    if (!url.startsWith("https://") && !url.startsWith("http://"))
+        url = "https://" + url;
+    downloadbutton.href = url;
+    downloadbutton.innerText = "Go There Now!";
+    downloadbutton.addEventListener("click", function() {    
+        var win = window.open(url, "_blank");
+        win.focus();
+    }, false);
 }
 else{
     var url = platforms[urlParams["p"]] + urlParams["id"];

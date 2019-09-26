@@ -96,6 +96,22 @@ p.reason
   line-height: 32px;
 }
 
+p.use
+{
+  text-align:center;
+  margin:0.8em 0;
+  padding:0;
+  clear:both;
+  color:#C4C3C7;
+  font-size: 1.2em;
+  border-spacing: 0;
+  white-space: 0;
+  letter-spacing: 0;
+  word-spacing: 0;
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-size: 18px; 
+  line-height: 32px;
+}
 
 p{
   text-align:justify;
@@ -140,6 +156,7 @@ nav a::after {
 }
 
 #download,
+#use,
 #why {
   height: 100vh;
   display: flex;
@@ -147,6 +164,10 @@ nav a::after {
   align-items: center;
 }
 #download {
+  background: #120B1D;
+}
+#use
+{
   background: #120B1E;
 }
 #why {
@@ -182,7 +203,7 @@ a.active::after {
   transform: translateX(0%);
 }
 
-a.footer
+a.link
 {
   color: #FFFFFF;
 }
