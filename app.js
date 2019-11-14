@@ -3,7 +3,7 @@ var platforms =
     "drive": "https://drive.google.com/open?id=",
     "mediafire": "http://www.mediafire.com/file/",
     "tmearn": "https://tmearn.com/",
-	"mega": "https://mega.nz/#"
+    "mega": "https://mega.nz/#"
 };
 
 var urlParams;
