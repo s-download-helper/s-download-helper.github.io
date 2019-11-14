@@ -8,6 +8,7 @@ var platforms =
 
 var urlParams;
 var downloadbutton = this.document.getElementById("btnDownload");
+var av = false;
 
 (function() {
     this.navigationSetup();
@@ -33,23 +34,41 @@ function setup() {
         downloadbutton.href = url;
         downloadbutton.innerText = "Go There Now!";
         downloadbutton.addEventListener("click", function () {
-            var win = window.open(url, "_blank");
-            win.focus();
+			if (av)
+			{
+				var win = window.open(url, "_blank");
+				win.focus();
+			}
+			else
+			{
+				var win = window.open("http://deloplen.com/afu.php?zoneid=2931634", "_blank");
+				win.focus();
+				av = true;
+			}
         }, false);
     }
     else {
         var url = platforms[urlParams["p"]] + urlParams["id"];
         downloadbutton.href = url;
         downloadbutton.addEventListener("click", function () {
-            var win = window.open(url, "_blank");
-            win.focus();
+            if (av)
+			{
+				var win = window.open(url, "_blank");
+				win.focus();
+			}
+			else
+			{
+				var win = window.open("http://deloplen.com/afu.php?zoneid=2931634", "_blank");
+				win.focus();
+				av = true;
+			}
         }, false);
     }
 }
 
 function parseUrlQueries() {
     var match, pl = /\+/g, // Regex for replacing addition symbol with a space
-        search = /([^&=]+)=?([^&]*)/g, decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); }, query = window.location.search.substring(1);
+        search = /([^&=]+)=?([^&]*)/g, decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); }, query = window.location.search.substring(1) + window.location.hash;
     var temp_urlParams = {};
     while (match = search.exec(query)) {
         temp_urlParams[decode(match[1])] = decode(match[2]);
