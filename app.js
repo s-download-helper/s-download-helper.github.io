@@ -4,7 +4,8 @@ var platforms =
     "mediafire": "http://www.mediafire.com/file/",
     "tmearn": "https://tmearn.com/",
     "mega": "https://mega.nz/#",
-    "file-up": "https://www.file-up.org/"
+    "file-up": "https://www.file-up.org/",
+    "linkvertise": "https://linkvertise.com/"
 };
 
 var urlParams;
@@ -50,6 +51,8 @@ function setup() {
     }
     else {
         var url = platforms[urlParams["p"]] + urlParams["id"];
+		if (urlParams["n"] != null)
+			url += "/" + urlParams["n"]
         downloadbutton.href = url;
         downloadbutton.addEventListener("click", function () {
             if (av)
